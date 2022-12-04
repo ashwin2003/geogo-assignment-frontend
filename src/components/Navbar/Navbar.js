@@ -45,10 +45,6 @@ const Navbar = () => {
     navigate("/");
   };
 
-  const onDashBoardClick = () => {
-    navigate("/dashboard");
-  };
-
   const onOrdersClick = () => {
     navigate("/orders");
   };
@@ -76,16 +72,6 @@ const Navbar = () => {
 
         {token ? (
           <>
-            {profile?.role === "Admin" && (
-              <Button
-                variant="contained"
-                fullWidth={false}
-                onClick={onDashBoardClick}
-                sx={{ backgroundColor: "var(--color4)" }}
-              >
-                DashBoard
-              </Button>
-            )}
             <Button
               variant="contained"
               fullWidth={false}
@@ -99,6 +85,7 @@ const Navbar = () => {
               fullWidth={false}
               onClick={onLogOutClick}
               sx={{ backgroundColor: "var(--color4)" }}
+              href="/"
             >
               LogOut
             </Button>

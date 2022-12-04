@@ -7,16 +7,41 @@ import { Button } from "@mui/material";
 import EventDetails from "../Modals/EventDetails";
 
 const Home = () => {
+  const token = localStorage.getItem("ticket-token");
+
   const navigate = useNavigate();
 
   const [events, setEvents] = useState([]);
   const [modal, setModal] = useState(false);
   const [modalEventId, setModalEventId] = useState("");
   const [refresh, setRefresh] = useState(false);
+  const [profile, setProfile] = useState({});
 
   useEffect(() => {
     getEvents();
+    getProfile();
   }, [refresh]);
+
+  const getProfile = async () => {
+    if (!token) {
+      // setRefresh(!refresh);
+      return;
+    }
+
+    try {
+      const config = {
+        headers: { authorization: `Bearer ${token}` },
+      };
+      const { data } = await axios.get(
+        "https://fair-houndstooth-bear.cyclic.app/user/me",
+        config
+      );
+
+      setProfile(data);
+    } catch (error) {}
+
+    // setRefresh(!refresh);
+  };
 
   const getEvents = async () => {
     try {
@@ -35,6 +60,10 @@ const Home = () => {
     navigate("/events");
   };
 
+  const onDashBoardClick = () => {
+    navigate("/dashboard");
+  };
+
   return (
     <>
       {modalEventId && (
@@ -47,7 +76,20 @@ const Home = () => {
             This is a assignment project for GeoGo made by Ashwin Jagarwal
             (ashwinjagarwal123@gmail.com) .
           </p>
-          <div className="button-container"></div>
+          <div className="button-container">
+            {profile?.full_name && <h2>Welcome {profile?.full_name}</h2>}
+
+            {profile?.role === "Admin" && (
+              <Button
+                variant="contained"
+                fullWidth={false}
+                onClick={onDashBoardClick}
+                sx={{ backgroundColor: "var(--color4)" }}
+              >
+                DashBoard
+              </Button>
+            )}
+          </div>
         </div>
         <div className="right">
           <h2>Events in your area.</h2>
