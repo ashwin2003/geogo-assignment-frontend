@@ -1,0 +1,26 @@
+.container {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color1);
+  justify-content: space-between;
+}
+
+.link-label {
+  text-decoration: none;
+  color: var(--color4);
+}
+
+.nav-right,
+.nav-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}

@@ -1,0 +1,36 @@
+.register-container {
+  height: 90vh;
+  /* width: 100vw; */
+  background-color: var(--color1);
+  align-self: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 2rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* background-color: aliceblue; */
+  /* height: 80%;
+  width: 50%; */
+}
+
+.text-field {
+  text-decoration: none;
+  width: 18vw;
+}
+
+.upload-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}

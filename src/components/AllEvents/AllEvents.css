@@ -1,0 +1,22 @@
+.all-events {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+
+.all-events-container {
+  min-height: 90vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--color1);
+  padding-bottom: 2vh;
+}
+
+.all-events-container h1 {
+  margin-top: 2vh;
+}

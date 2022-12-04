@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Alexandria", sans-serif;
+
+  --color1: #efe5dc;
+  --color2: #ce796b;
+  --color3: #cc8b86;
+  --color4: #7d4f50;
+  --color5: #e7ad99;
+}
+
+.App {
+  height: 100vh;
+}
