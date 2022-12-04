@@ -20,11 +20,15 @@ const Home = () => {
 
   const getEvents = async () => {
     try {
-      const { data } = await axios.get("/event/all");
+      const { data } = await axios.get(
+        "https://fair-houndstooth-bear.cyclic.app/event/all"
+      );
 
       setEvents(data?.slice(0, 4));
       setRefresh(true);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onViewAllclick = () => {

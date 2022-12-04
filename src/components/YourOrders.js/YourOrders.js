@@ -20,7 +20,10 @@ const YourOrders = () => {
       const config = {
         headers: { authorization: `Bearer ${token}` },
       };
-      const { data } = await axios.get("/order/", config);
+      const { data } = await axios.get(
+        "https://fair-houndstooth-bear.cyclic.app/order/",
+        config
+      );
       setOrders(data);
     } catch (error) {}
   };
@@ -31,7 +34,7 @@ const YourOrders = () => {
         headers: { authorization: `Bearer ${token}` },
       }; // eslint-disable-next-line
       const { data } = await axios.put(
-        `/order/cancel/${props.orderId}`,
+        `https://fair-houndstooth-bear.cyclic.app/order/cancel/${props.orderId}`,
         {
           status: "Cancelled",
         },

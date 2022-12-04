@@ -25,7 +25,9 @@ const EventDetails = (props) => {
 
   const getEventDetails = async () => {
     try {
-      const { data } = await axios.get(`/event/${props.eventId}`);
+      const { data } = await axios.get(
+        `https://fair-houndstooth-bear.cyclic.app/event/${props.eventId}`
+      );
 
       setEvent(data);
       setError(false);

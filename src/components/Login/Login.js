@@ -32,7 +32,10 @@ const Login = () => {
     if (!email || !password) setError(true);
 
     try {
-      const { data } = await axios.post("/user/login", loginData);
+      const { data } = await axios.post(
+        "https://fair-houndstooth-bear.cyclic.app/user/login",
+        loginData
+      );
       setError(false);
       localStorage.setItem("ticket-token", data?.token);
       navigate("/");

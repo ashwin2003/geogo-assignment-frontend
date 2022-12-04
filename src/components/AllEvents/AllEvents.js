@@ -17,7 +17,9 @@ const AllEvents = () => {
 
   const getEvents = async () => {
     try {
-      const { data } = await axios.get("/event/all");
+      const { data } = await axios.get(
+        "https://fair-houndstooth-bear.cyclic.app/event/all"
+      );
       setError(false);
       setEvents(data);
     } catch (error) {

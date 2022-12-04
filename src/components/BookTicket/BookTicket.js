@@ -30,7 +30,9 @@ const BookTicket = () => {
 
   const getTicket = async () => {
     try {
-      const { data } = await axios.get(`/ticket/${eventId}`);
+      const { data } = await axios.get(
+        `https://fair-houndstooth-bear.cyclic.app/ticket/${eventId}`
+      );
       console.log(data);
       setTickets(data);
     } catch (error) {}
@@ -38,7 +40,9 @@ const BookTicket = () => {
 
   const getEventDetails = async () => {
     try {
-      const { data } = await axios.get(`/event/${eventId}`);
+      const { data } = await axios.get(
+        `https://fair-houndstooth-bear.cyclic.app/event/${eventId}`
+      );
       setEvent(data);
     } catch (error) {}
   };

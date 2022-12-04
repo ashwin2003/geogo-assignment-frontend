@@ -26,7 +26,10 @@ const Navbar = () => {
       const config = {
         headers: { authorization: `Bearer ${token}` },
       };
-      const { data } = await axios.get("/user/me", config);
+      const { data } = await axios.get(
+        "https://fair-houndstooth-bear.cyclic.app/user/me",
+        config
+      );
 
       setProfile(data);
     } catch (error) {}

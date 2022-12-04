@@ -127,7 +127,11 @@ const EventDashboard = () => {
         headers: { authorization: `Bearer ${token}` },
       };
 
-      const { data } = await axios.post("/event/add", eventData, config);
+      const { data } = await axios.post(
+        "https://fair-houndstooth-bear.cyclic.app/event/add",
+        eventData,
+        config
+      );
 
       setCreateModal(false);
       setUrl("");
@@ -148,7 +152,9 @@ const EventDashboard = () => {
 
   const checkEventId = async () => {
     try {
-      const { data } = await axios.get(`/event/${eventId}`);
+      const { data } = await axios.get(
+        `https://fair-houndstooth-bear.cyclic.app/event/${eventId}`
+      );
 
       const sd =
         data?.start_date?.substring(0, 4) +
@@ -221,7 +227,7 @@ const EventDashboard = () => {
       };
       // eslint-disable-next-line
       const { data } = await axios.put(
-        `/event/${eventId}`,
+        `https://fair-houndstooth-bear.cyclic.app/event/${eventId}`,
         updateEventData,
         config
       );
@@ -254,7 +260,10 @@ const EventDashboard = () => {
     };
     try {
       // eslint-disable-next-line
-      const { data } = await axios.delete(`/event/${deleteEventId}`, config);
+      const { data } = await axios.delete(
+        `https://fair-houndstooth-bear.cyclic.app/event/${deleteEventId}`,
+        config
+      );
       setDeleteEventError(false);
       setDeleteModal(false);
     } catch (error) {

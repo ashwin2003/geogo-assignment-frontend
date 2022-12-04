@@ -45,7 +45,11 @@ const SelectSeats = (props) => {
         headers: { authorization: `Bearer ${token}` },
       };
       // eslint-disable-next-line
-      const { data } = await axios.post("/order/add", orderData, config);
+      const { data } = await axios.post(
+        "https://fair-houndstooth-bear.cyclic.app/order/add",
+        orderData,
+        config
+      );
 
       setError(false);
       props.setSelectSeats(false);

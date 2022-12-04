@@ -80,7 +80,11 @@ const DashBoardTicket = () => {
         headers: { authorization: `Bearer ${token}` },
       };
       // eslint-disable-next-line
-      const { data } = await axios.post("/ticket/add", ticketData, config);
+      const { data } = await axios.post(
+        "https://fair-houndstooth-bear.cyclic.app/ticket/add",
+        ticketData,
+        config
+      );
 
       setTicketModal(false);
       setError(false);
@@ -101,7 +105,9 @@ const DashBoardTicket = () => {
 
   const onCheckEventId = async () => {
     try {
-      const { data } = await axios.get(`/event/${eventId}`);
+      const { data } = await axios.get(
+        `https://fair-houndstooth-bear.cyclic.app/event/${eventId}`
+      );
 
       const sd =
         data?.start_date?.substring(0, 4) +

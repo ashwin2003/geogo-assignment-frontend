@@ -43,7 +43,10 @@ const Register = () => {
 
     try {
       // eslint-disable-next-line
-      const { data } = await axios.post("/user/register", registerData);
+      const { data } = await axios.post(
+        "https://fair-houndstooth-bear.cyclic.app/user/register",
+        registerData
+      );
       setError(false);
       navigate("/login");
     } catch (error) {
